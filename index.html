@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navbar -->
     <header class="navbar">
         <img src="logo-url" alt="Podcast Logo" class="logo">
         <nav>
@@ -19,6 +20,7 @@
         </nav>
     </header>
 
+    <!-- Home Section with Faded Logo Background -->
     <section id="home" class="home-section">
         <div class="overlay">
             <h1>Welcome to The Tentative Monologues</h1>
@@ -26,23 +28,23 @@
         </div>
     </section>
 
+    <!-- Episodes Section with Interactive Info Pop-Ups -->
     <section id="episodes" class="episodes-section">
         <h2>Episodes</h2>
         <div class="episodes-grid">
-            <!-- Episode Cards with Images and Links -->
+            <div class="episode-card" id="episode1">
+                <img src="episode1-cover-image-url" alt="Episode 1" class="episode-image">
+                <div class="episode-overlay">
+                    <h3>Episode 1: Accordion</h3>
+                    <p><a href="episode1-spotify-link" target="_blank">Listen on Spotify</a></p>
+                </div>
+                <div class="episode-info-popup">Did you know? Accordions date back to the early 19th century – they're the original "squeezebox!"</div>
+            </div>
+            <!-- Repeat for more episodes, using individual cover images for each -->
         </div>
     </section>
 
-    <section id="essays" class="essays-section">
-        <h2>Essays</h2>
-        <!-- Essay Summaries with Animated Cards -->
-    </section>
-
-    <section id="gallery" class="gallery-section">
-        <h2>Gallery</h2>
-        <!-- Lightbox Image Gallery -->
-    </section>
-
+    <!-- Chatbot Section -->
     <div id="chatbot" class="chatbot">
         <div class="chatbot-header">Ask Sankomota</div>
         <div class="chatbot-body"></div>
@@ -56,3 +58,4 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+
