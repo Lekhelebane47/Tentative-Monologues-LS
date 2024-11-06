@@ -1,4 +1,4 @@
-// Chatbot Interactivity with Humor
+// Chatbot with Enhanced Humor Tailored to Episodes
 document.getElementById('chat-input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         let userInput = e.target.value;
@@ -10,47 +10,28 @@ document.getElementById('chat-input').addEventListener('keypress', function (e) 
 });
 
 function chatbotResponse(input) {
-    switch (true) {
-        case /hello/i.test(input):
-            return "Hello there! Fancy a chat about deep thoughts and questionable ideas?";
-        case /episodes/i.test(input):
-            return "Oh, you've got great taste! Check out the Episodes section – I hear Episode 3 is particularly life-changing.";
-        case /what's new/i.test(input):
-            return "Just the usual existential crises and a sprinkle of humor! Ask me about the podcast or random topics!";
-        case /fun fact/i.test(input):
-            return "Fun fact: The accordion is also called a 'squeezebox' because, well, you squeeze it!";
-        case /gallery/i.test(input):
-            return "Our gallery has all the good stuff – visuals that match the profound nonsense you’ll love!";
-        default:
-            return "I'm here for all your questions, wise or silly! Try 'fun fact' or 'episodes'!";
+    if (/accordion/i.test(input)) {
+        return "Ah, Episode 1! The accordion – a party in your hands since 1829!";
+    } else if (/fun fact/i.test(input)) {
+        return "Fun fact: The word 'accordion' comes from 'accord,' meaning harmony or agreement. Fancy, right?";
+    } else if (/news|latest/i.test(input)) {
+        return "Breaking news: Just heard on Twitter, cats may indeed be planning world domination.";
+    } else {
+        return "I'm here for all your questions, wise or silly! Try 'fun fact' or 'episodes'!";
     }
 }
 
-// Info Pop-ups for Episodes
+// Interactive Episode Info Pop-Ups
 const episodesInfo = {
-    episode1: "Did you know? Accordions have a rich history dating back to the early 19th century!",
-    episode2: "Fun tidbit: Episode 2 dives deep into intriguing human behaviors. No spoilers though!",
-    episode3: "New in the world? Philosophers are re-evaluating old thoughts – perhaps Episode 3 is ahead of its time!",
-    episode4: "Did you hear? New studies show laughter is the best medicine. Check out Episode 4 for a dose!",
-    episode5: "Just in: People are debating tech’s impact on creativity. Episode 5 might have answers!",
-    episode6: "Trivia: Did you know that colors can affect your mood? Episode 6 delves into the science of emotions.",
-    episode7: "Breaking News! AI is now writing poetry. Is it soulful or soulless? Episode 7 has some answers!"
+    episode1: "Did you know? Accordions were first patented in 1829 and have since been a staple in folk music.",
+    episode2: "Episode 2 tackles human behavior – latest findings show that humor can help us bond faster!",
+    episode3: "Episode 3 explores philosophy – just in: over 90% of philosophers agree thinking is exhausting.",
+    // Add more episode-specific facts
 };
 
-// Function to show info pop-ups
-document.querySelectorAll('.episode-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        const popup = card.querySelector('.episode-info-popup');
-        const topic = card.getAttribute('data-topic');
-        popup.textContent = episodesInfo[card.id] || "Interesting fact!";
-    });
-});
-
-// Dynamic API content placeholder
-// Future integration with API to pull news and facts around episode topics
+// API Placeholder for Future Integration
 async function updateEpisodeInfo() {
-    // Placeholder for future API integration
-    // E.g., fetch real-time news or facts on episode topics
-    console.log("Dynamic data updates would appear here.");
+    console.log("Future data updates would appear here for live info on episode topics.");
 }
 updateEpisodeInfo();
+
