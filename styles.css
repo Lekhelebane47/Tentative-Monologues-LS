@@ -1,10 +1,3 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Navbar Styling */
 .navbar {
     background: #1a1a1a;
@@ -25,47 +18,51 @@
     color: #ff6b6b;
 }
 
-/* Home Section */
-.home-section {
-    height: 100vh;
-    background-image: url('logo-url');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
+/* Background for Faded Logo */
+.home-section,
+.episodes-section,
+.essays-section,
+.gallery-section {
+    background: url('logo-url') center center / cover no-repeat fixed;
+    opacity: 0.8;
 }
 
-.home-section .overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 2rem;
-}
-
-/* Episodes Section */
-.episodes-section {
-    background: #f0f0f0;
-    padding: 3rem 1rem;
-}
-
+/* Episode Cards */
 .episodes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
 
-.episodes-grid .episode-card {
+.episode-card {
     background-color: #333;
     color: #fff;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-.episodes-grid .episode-card:hover {
+.episode-card:hover {
     transform: scale(1.05);
+    background-color: #444;
+}
+
+.episode-info-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    width: 200px;
+    font-size: 0.9em;
+}
+
+.episode-card:hover .episode-info-popup {
+    display: block;
 }
 
 /* Chatbot */
@@ -78,14 +75,5 @@
     width: 250px;
     padding: 10px;
     border-radius: 5px;
-}
-
-.chatbot-header {
-    font-weight: bold;
-}
-
-#chat-input {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
